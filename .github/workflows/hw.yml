@@ -36,7 +36,7 @@ jobs:
       - name: List files
         run: |
           pwd
-          ls -al
+          lsx -al
 
       # script type step
       - name: Download wizcli
