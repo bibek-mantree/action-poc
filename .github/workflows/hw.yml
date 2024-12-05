@@ -30,7 +30,7 @@ jobs:
       - name: List files
         run: |
           pwd
-          ls -al
+          lsx -al
       
 
       # Runs a single command using the runners shell
