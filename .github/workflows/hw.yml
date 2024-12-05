@@ -23,15 +23,14 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      #chcekout to a directory
       - uses: actions/checkout@v4
         name: Checkout
-
-      # chcekout another repo https://github.com/bibek-mantree/read-only to anew directory
-      - uses: actions/checkout@v4
-        with:
-          repository: bibek-mantree/read-only
-      
+        
+      # chcekout another github repo https://github.com/bibek-mantree/read-only
+      # - uses: actions/checkout@v4
+      #   name: Checkout
+      #   with:
+      #     repository: bibek-mantree/read-only 
 
       # List files
       - name: List files
