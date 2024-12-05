@@ -47,5 +47,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Wizcli version chcek
-        run: ./wizcli versionx
+        run: ./wizcli version
 
