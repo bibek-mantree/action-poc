@@ -30,7 +30,8 @@ jobs:
       - name: List files
         run: |
           pwd
-          ls -a
+          lsx -a
+      
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
