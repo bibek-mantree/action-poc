@@ -1,0 +1,14 @@
+name: first workflow
+
+on: workflow_dispatch # manually trigger
+
+
+jobs:
+    first_job_name: # you can guve anyname and this is the job name. Job names are not reserved name
+        runs-on: ubuntu-latest # runner name
+        steps:
+            - name: first step
+              run: echo "hello Bibek"
+
+            - name: Say Bye
+              run: echo "Bye Bibek"
