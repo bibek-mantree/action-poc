@@ -1,6 +1,7 @@
 name: first workflow
 
-on: workflow_dispatch # manually trigger
+on: 
+  workflow_dispatch: # manually trigger
 
 
 jobs:
