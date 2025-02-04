@@ -3,21 +3,17 @@ name: API  Workflow
 on:
   workflow_dispatch:
     inputs:
-      name:
-        description: 'Path to list'
+      id:
+        description: 'Task Id'
         required: true
-        default: '/etc'
+        default: '1'
 
 jobs:
   Api_job:
     runs-on: ubuntu-latest
     steps:
-      - name: List files
-        run:  ls -ltr ${{ inputs.name }}
-        env:
-          name: ${{ github.event.inputs.name }}
+      - name: Call REST API
+        run: curl -s https://jsonplaceholder.typicode.com/todos/${{ github.event.inputs.id }}
 
       - name: Greeting 
         run: echo "Bye Bibek"
-        env:
-          name: ${{ github.event.inputs.name }}
