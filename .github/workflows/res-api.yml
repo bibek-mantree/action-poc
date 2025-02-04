@@ -4,20 +4,20 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: 'Name to greet'
+        description: 'Path to list'
         required: true
-        default: 'World'
+        default: '/etc'
 
 jobs:
-  greet:
+  Api_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Hello
-        run: echo "Hello ${{ inputs.name }}"
+      - name: List files
+        run:  ls -ltr ${{ inputs.name }}"
         env:
           name: ${{ github.event.inputs.name }}
 
-      - name: Bye
-        run: echo "Bye ${{ inputs.name }}"
+      - name: Greeting 
+        run: echo "Bye Bibek"
         env:
           name: ${{ github.event.inputs.name }}
