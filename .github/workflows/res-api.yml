@@ -1,4 +1,4 @@
-name: API  Workflow
+name: API Workflow
 
 on:
   workflow_dispatch:
@@ -13,7 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Call REST API
-        run: curl -s https://jsonplaceholder.typicode.com/todos/${{ github.event.inputs.id }}
+        run: |
+          response=$(curl -s https://jsonplaceholder.typicode.com/todos/${{ github.event.inputs.id }})
+          echo "$response"
+          completed=$(echo "$response" | jq -r '.completed')
+          if [ "$completed" = "false" ]; then
+            echo "Task is not completed"
+            exit 1
+          fi
 
-      - name: Greeting 
-        run: echo "Bye Bibek"
+      - name: Greeting
+        run: echo "Good Job! You have completed the Job"
