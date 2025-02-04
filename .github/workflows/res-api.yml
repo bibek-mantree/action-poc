@@ -1,0 +1,17 @@
+name: API  Workflow
+
+on: [push]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello
+        run: echo "Hello ${{ inputs.name }}"
+        env:
+          name: ${{ github.event.inputs.name }}
+
+      - name: Bye
+        run: echo "Bye ${{ inputs.name }}"
+        env:
+          name: ${{ github.event.inputs.name }}
