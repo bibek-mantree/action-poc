@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: List files
-        run:  ls -ltr ${{ inputs.name }}"
+        run:  ls -ltr ${{ inputs.name }}
         env:
           name: ${{ github.event.inputs.name }}
 
